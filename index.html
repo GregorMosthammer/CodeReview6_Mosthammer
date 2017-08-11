@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code Review 6</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Lato|Slabo+27px');
+  .row{
+    margin:3%;
+  }
+  .MovieStyle{
+    background-color: lightgrey;
+  }
+  .CdStyle{
+    background-color: lightcyan;
+  }
+  .ComicStyle{
+    
+    background-color: lightcoral;
+  }
+  .BookStyle{
+    background-color: lightgreen;
+  }
+  ul,li{
+    font-family: 'Slabo 27px', serif;
+    list-style-type: none;
+    font-size: 15pt;
+  }
+  h1{
+    font-family: 'Lato', sans-serif;
+  }
+
+  div img{
+    width: 1000px;
+    max-height: 400px;
+  }
+
+  </style>
+  </head>
+  <body onload='media()'>
+    <script src='index.js'></script>
+    <script>
+    function media(){
+      vehiclesArray =new Array();
+      firstMovie = new Movie('Lord of the Rings','Peter Jackson','Fantasy','Allen & Unwin',5,'http://vignette2.wikia.nocookie.net/lotr/images/d/da/Die-gefaehrten.jpg/revision/latest?cb=20110711092803&path-prefix=de');
+
+      secondMovie = new Movie('Pulpfiction','Quentin Tarantino','Drama','Quentin Tarantino',5,'https://pmd205465tn-a.akamaihd.net/Miramax/279/95/hiamxwYTqGi5jcQNYzQwZxZRYqvKxtw5_h264_3800_640x360_352124483894.jpg');
+
+      firstCd = new Cd('Meteora','Linkin Park','Rock',' - ',5,'https://i.ytimg.com/vi/C9056hf9ehM/hqdefault.jpg');
+
+      secondCd = new Cd('toxicity','System of a Down','Rock','-',5,'https://images-na.ssl-images-amazon.com/images/I/61Wt2PvyIhL.jpg');
+
+      firstComic = new Comic('Batman: Joker','Mark Hamill','Comic','Panini',5,'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISre_Mc0lx1kvAylM9aZ4UxZnCXtpMJ6bScM6dod32U0L_GdAQg');
+
+      firstBook = new Book('Shore Stein Papier','$ick','Drama','Piper Paperback',5,'http://www.rtlnord.de/files/rtlregional/images/201703/01/sicktour17_pu_ni_170301_720x405.jpg');
+
+      vehiclesArray.push(firstMovie);
+      vehiclesArray.push(secondMovie);
+      vehiclesArray.push(firstCd);
+      vehiclesArray.push(secondCd);
+      vehiclesArray.push(firstComic);
+
+      vehiclesArray.push(firstBook);
+
+
+      seller = new Seller(vehiclesArray);
+      seller.showArray();
+      seller.renderAll();
+      seller.countTypeOfVehicles();
+      vehiclesArray2 =new Array();
+      firstVehicle2 = new Movie('VW',300,120,2006,3000,5,'diesel',5);
+      vehiclesArray2.push(firstVehicle2);
+      seller2 =new Seller(vehiclesArray2);
+      seller2.showArray();
+    }
+      //seller.renderOnPage();
+    </script>
+    <div class='container-fluid' id='vehicleList'>
+
+    </div>
+
+  </body>
+</html>
